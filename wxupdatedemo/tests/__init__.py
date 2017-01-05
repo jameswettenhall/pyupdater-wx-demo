@@ -1,0 +1,3 @@
+"""
+wxupdatedemo/tests package
+"""

@@ -1,0 +1,9 @@
+appdirs
+bsdiff4
+coverage
+ed25519
+flask
+nose
+psutil
+pyupdater
+requests==2.4.3 # https://github.com/kennethreitz/requests/issues/2465
