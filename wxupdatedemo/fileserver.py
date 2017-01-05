@@ -15,8 +15,11 @@ logger = logging.getLogger(__name__)
 def RunFileServer(fileServerDir, fileServerPort):
     """
     Run a Flask file server on the given port.
+
+    Explicitly specify instance_path, because Flask's
+    auto_find_instance_path can fail when run in a frozen app.
     """
-    app = Flask(__name__)
+    app = Flask(__name__, instance_path=fileServerDir)
 
     @app.route('/fileserver-is-ready', methods=['GET'])
     def FileserverIsReady():  # pylint: disable=unused-variable
