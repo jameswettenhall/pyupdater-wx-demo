@@ -228,11 +228,22 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
         # pylint: disable=too-many-locals
         # pylint: disable=too-many-statements
 
-        # PyUpdater uses PyInstaller under the hood.  Now we will customize
+        # PyUpdater uses PyInstaller under the hood.  We will customize
         # the command-line arguments PyUpdater sends to PyInstaller.
+
         # The SocketServer module (used by werkzeug, which is used by Flask)
         # doesn't seem to get detected automatically by PyInstaller (observed
         # on Windows), so we add this as a hidden import.
+
+        # The "packaging" hidden imports are a workaround for this issue:
+        # https://github.com/pyinstaller/pyinstaller/issues/2162
+
+        pyiArgs = ['--hidden-import', 'SocketServer',
+                   '--hidden-import', 'packaging',
+                   '--hidden-import', 'packaging.version',
+                   '--hidden-import', 'packaging.specifiers',
+                   '--hidden-import', 'packaging.requirements',
+                   'run.py']
         if get_system() == 'mac':
             # On Mac, we need to use PyInstaller's --windowed option to create
             # an app bundle, otherwise attempting to run the frozen application
@@ -245,11 +256,9 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
             # On other platforms, we will build a console application for the
             # purposes of testing, so that we can easily interact with its
             # STDOUT and STDERR:
-            pyiArgs = ['--windowed', '--hidden-import', 'SocketServer',
-                       'run.py']
+            pyiArgs = ['--windowed'] + pyiArgs
         else:
-            pyiArgs = ['--console', '--hidden-import', 'SocketServer',
-                       'run.py']
+            pyiArgs = ['--console'] + pyiArgs
         wxupdatedemo.__version__ = CURRENT_VERSION
         args = Namespace(app_version=CURRENT_VERSION, clean=False,
                          command='build', distpath=None, keep=False,
