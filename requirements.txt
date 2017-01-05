@@ -5,5 +5,6 @@ ed25519
 flask
 nose
 psutil
+PyInstaller==3.1
 pyupdater
 requests==2.4.3 # https://github.com/kennethreitz/requests/issues/2465
