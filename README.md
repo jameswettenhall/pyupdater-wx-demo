@@ -1,6 +1,6 @@
 # pyupdater-wx-demo
 
-[![Build status](https://ci.appveyor.com/api/projects/status/ngmnnv74iajyke4f?svg=true)](https://ci.appveyor.com/project/wettenhj/pyupdater-wx-demo) [![Coverage Status](https://coveralls.io/repos/github/wettenhj/pyupdater-wx-demo/badge.svg?branch=master)](https://coveralls.io/github/wettenhj/pyupdater-wx-demo?branch=master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ngmnnv74iajyke4f?svg=true)](https://ci.appveyor.com/project/wettenhj/pyupdater-wx-demo) [![Code Health](https://landscape.io/github/wettenhj/pyupdater-wx-demo/master/landscape.svg?style=flat)](https://landscape.io/github/wettenhj/pyupdater-wx-demo/master) [![Coverage Status](https://coveralls.io/repos/github/wettenhj/pyupdater-wx-demo/badge.svg?branch=master)](https://coveralls.io/github/wettenhj/pyupdater-wx-demo?branch=master)
 
 Demo of self-updating wxPython application.
 
