@@ -238,11 +238,11 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
         # The "packaging" hidden imports are a workaround for this issue:
         # https://github.com/pyinstaller/pyinstaller/issues/2162
 
-        pyiArgs = ['--hidden-import', 'SocketServer',
-                   '--hidden-import', 'packaging',
-                   '--hidden-import', 'packaging.version',
-                   '--hidden-import', 'packaging.specifiers',
-                   '--hidden-import', 'packaging.requirements',
+        pyiArgs = ['--hidden-import=SocketServer',
+                   '--hidden-import=packaging',
+                   '--hidden-import=packaging.version',
+                   '--hidden-import=packaging.specifiers',
+                   '--hidden-import=packaging.requirements',
                    'run.py']
         if get_system() == 'mac':
             # On Mac, we need to use PyInstaller's --windowed option to create
