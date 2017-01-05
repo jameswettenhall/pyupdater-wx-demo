@@ -50,6 +50,8 @@ install:
   # Install the build dependencies of the project.
   - "%CMD_IN_ENV% pip install -r requirements.txt"
 
+  - "%CMD_IN_ENV% pip install coveralls"
+
   - "%CMD_IN_ENV% pip install -U --pre -f https://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix"
 
 build: false  # Not a C# project, build stuff at the test step instead.
