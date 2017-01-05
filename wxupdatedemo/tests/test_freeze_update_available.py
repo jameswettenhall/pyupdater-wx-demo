@@ -60,6 +60,16 @@ VERSIONS = {
           'file_hash': None,
           'filename': '%s-win-%s.zip' % (APP_NAME, CURRENT_VERSION),
           'file_size': FILE_SIZE
+        },
+        'nix32': {
+          'file_hash': None,
+          'filename': '%s-nix32-%s.tar.gz' % (APP_NAME, CURRENT_VERSION),
+          'file_size': FILE_SIZE
+        },
+        'nix64': {
+          'file_hash': None,
+          'filename': '%s-nix64-%s.tar.gz' % (APP_NAME, CURRENT_VERSION),
+          'file_size': FILE_SIZE
         }
       },
       UPDATE_VERSION_PYU_FORMAT: {
@@ -70,13 +80,28 @@ VERSIONS = {
           'patch_name': '%s-mac-2' % APP_NAME,
           'patch_hash': None,
           'patch_size': PATCH_SIZE
-
         },
         'win': {
           'file_hash': None,
           'filename': '%s-win-%s.zip' % (APP_NAME, UPDATE_VERSION),
           'file_size': FILE_SIZE,
           'patch_name': '%s-win-2' % APP_NAME,
+          'patch_hash': None,
+          'patch_size': PATCH_SIZE
+        },
+        'nix32': {
+          'file_hash': None,
+          'filename': '%s-nix32-%s.tar.gz' % (APP_NAME, UPDATE_VERSION),
+          'file_size': FILE_SIZE,
+          'patch_name': '%s-nix32-2' % APP_NAME,
+          'patch_hash': None,
+          'patch_size': PATCH_SIZE
+        },
+        'nix64': {
+          'file_hash': None,
+          'filename': '%s-nix64-%s.tar.gz' % (APP_NAME, UPDATE_VERSION),
+          'file_size': FILE_SIZE,
+          'patch_name': '%s-nix64-2' % APP_NAME,
           'patch_hash': None,
           'patch_size': PATCH_SIZE
         }
@@ -87,7 +112,9 @@ VERSIONS = {
     APP_NAME: {
       'stable': {
         'mac': UPDATE_VERSION_PYU_FORMAT,
-        'win': UPDATE_VERSION_PYU_FORMAT
+        'win': UPDATE_VERSION_PYU_FORMAT,
+        'nix32': UPDATE_VERSION_PYU_FORMAT,
+        'nix64': UPDATE_VERSION_PYU_FORMAT
       }
     }
   }

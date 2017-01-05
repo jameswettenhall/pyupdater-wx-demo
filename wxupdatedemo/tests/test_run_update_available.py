@@ -44,6 +44,16 @@ VERSIONS = {
           "file_hash": "b1399df583bce4ca45665b3960fd918a316d86c997d6c33556eda1cc2b555e59",
           "filename": "%s-win-%s.zip" % (APP_NAME, UPDATE_VERSION),
           "file_size": 14132995
+        },
+        "nix32": {
+          "file_hash": "bd4bc8824dfd8240d5bdb9e46f21a86af4d6d1cc1486a2a99cc4b9724a79492b",
+          "filename": "%s-nix32-%s.tar.gz" % (APP_NAME, UPDATE_VERSION),
+          "file_size": 30253628
+        },
+        "nix64": {
+          "file_hash": "bd4bc8824dfd8240d5bdb9e46f21a86af4d6d1cc1486a2a99cc4b9724a79492b",
+          "filename": "%s-nix64-%s.tar.gz" % (APP_NAME, UPDATE_VERSION),
+          "file_size": 30253628
         }
       }
     }
@@ -52,7 +62,9 @@ VERSIONS = {
     APP_NAME: {
       "stable": {
         "mac": UPDATE_VERSION_PYU_FORMAT,
-        "win": UPDATE_VERSION_PYU_FORMAT
+        "win": UPDATE_VERSION_PYU_FORMAT,
+        "nix32": UPDATE_VERSION_PYU_FORMAT,
+        "nix64": UPDATE_VERSION_PYU_FORMAT
       }
     }
   }
