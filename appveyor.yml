@@ -4,8 +4,8 @@
 # http://www.appveyor.com/docs/appveyor-yml
 
 # Enable RDP access to build worker:
-init:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+# init:
+  # - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 environment:
   global:
@@ -14,13 +14,14 @@ environment:
     # See: http://stackoverflow.com/a/13751649/163740
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
+    COVERALLS_SERVICE_NAME: AppVeyor
+    COVERALLS_REPO_TOKEN:
+      secure: XUqVW3cwrt9mzYqHTAOZ9aj7eFzNFfT0cRYnOBM9olMbnRzKnGtUY8m163DeWeMR
+
   matrix:
-
-    # Python 2.7.10 is the latest version and is not pre-installed.
-
-    - PYTHON: "C:\\Python27.10"
-      PYTHON_VERSION: "2.7.10"
-      PYTHON_ARCH: "32"
+    - PYTHON: "C:\\Python27.13"
+      PYTHON_VERSION: "2.7.13"
+      PYTHON_ARCH: "64"
 
 install:
   - ECHO "Filesystem root:"
@@ -55,3 +56,10 @@ build: false  # Not a C# project, build stuff at the test step instead.
 
 test_script:
   - "%CMD_IN_ENV% python setup.py nosetests"
+
+after_test:
+  - "SET CI_NAME=AppVeyor"
+  - "SET CI_BUILD_NUMBER=%APPVEYOR_BUILD_NUMBER%"
+  - "SET CI_BUILD_URL=https://ci.appveyor.com/project/wettenhj/pyupdater-wx-demo/%APPVEYOR_BUILD_VERSION%"
+  - "SET CI_BRANCH=%APPVEYOR_REPO_BRANCH%"
+  - "%CMD_IN_ENV% coveralls"
