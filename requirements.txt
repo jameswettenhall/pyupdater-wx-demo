@@ -8,3 +8,4 @@ psutil
 PyInstaller==3.1
 pyupdater
 requests==2.4.3 # https://github.com/kennethreitz/requests/issues/2465
+setuptools==19.2 # https://github.com/pyinstaller/pyinstaller/issues/1781
