@@ -295,11 +295,11 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
                                       stderr=subprocess.STDOUT,
                                       env=os.environ.copy())
         runExeStdout, _ = runExeProc.communicate()
+        logger.debug(runExeStdout)
         self.assertEqual(runExeProc.returncode, 0)
         appliedPatchSuccessfully = False
         statusPrefix = "Exiting with status: "
         for line in runExeStdout.splitlines():
-            logger.debug(line)
             if "Applied patch successfully" in line:
                 sys.stderr.write("\t%s\n" % line)
                 appliedPatchSuccessfully = True
@@ -319,11 +319,11 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
                                       stderr=subprocess.STDOUT,
                                       env=os.environ.copy())
         runExeStdout, _ = runExeProc.communicate()
+        logger.debug(runExeStdout)
         self.assertEqual(runExeProc.returncode, 0)
         fullDownloadSuccessful = False
         statusPrefix = "Exiting with status: "
         for line in runExeStdout.splitlines():
-            logger.debug(line)
             if "Full download successful" in line:
                 sys.stderr.write("\t%s\n" % line)
                 fullDownloadSuccessful = True
@@ -347,11 +347,11 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
                                       stderr=subprocess.STDOUT,
                                       env=os.environ.copy())
         runExeStdout, _ = runExeProc.communicate()
+        logger.debug(runExeStdout)
         self.assertEqual(runExeProc.returncode, 0)
         statusPrefix = "Exiting with status: "
         fullDownloadFailed = False
         for line in runExeStdout.splitlines():
-            logger.debug(line)
             if "Full download failed" in line:
                 sys.stderr.write("\t%s\n" % line)
                 fullDownloadFailed = True
