@@ -1,4 +1,7 @@
 # pyupdater-wx-demo
+
+[![Build status](https://ci.appveyor.com/api/projects/status/ngmnnv74iajyke4f?svg=true)](https://ci.appveyor.com/project/wettenhj/pyupdater-wx-demo)
+
 Demo of self-updating wxPython application.
 
 PyUpdater is based on PyInstaller, so most of the "pyupdater" command line
