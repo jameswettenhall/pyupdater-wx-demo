@@ -3,6 +3,10 @@
 # http://www.appveyor.com/about
 # http://www.appveyor.com/docs/appveyor-yml
 
+# Enable RDP access to build worker:
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
 environment:
   global:
     # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
