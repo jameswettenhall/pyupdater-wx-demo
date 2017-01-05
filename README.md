@@ -225,13 +225,7 @@ Tests can be run with:
 
 Troubleshooting
 ==============
-1. If PyInstaller hangs while performing the operation:
-
-```Adding redirect Microsoft.VC90.MFC```
-
-See: http://stackoverflow.com/questions/40380721/pyinstaller-hangs-adding-redirect-microsoft-vc90-mfc
-
-This issue has been observed on Windows with PyInstaller 3.2
+1. If PyInstaller 3.2 hangs while performing the operation, "Adding redirect Microsoft.VC90.MFC", see: http://stackoverflow.com/questions/40380721/pyinstaller-hangs-adding-redirect-microsoft-vc90-mfc
 
 2. In some versions of PyInstaller, sys.exit (used by run.py's
 DisplayVersionAndExit) can generate a misleading 'Failed to execute script run'
