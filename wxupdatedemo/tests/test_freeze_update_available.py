@@ -314,7 +314,7 @@ class FreezeUpdateAvailableTester(unittest.TestCase):
             tar = tarfile.open(buildFilename, "r:gz")
             tar.extractall()
             tar.close()
-            pathToExe = APP_NAME
+            pathToExe = os.path.join(newDir, APP_NAME)
 
         sys.stderr.write("\n\nTesting ability to apply patch update...\n")
 
