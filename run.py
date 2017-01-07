@@ -7,6 +7,7 @@ import logging
 import os
 import sys
 import threading
+import time
 import argparse
 
 from pyupdater.client import Client
@@ -95,7 +96,7 @@ def StartFileServer(fileServerDir):
     return fileServerPort
 
 
-def CheckForUpdates(fileServerPort):
+def CheckForUpdates(fileServerPort, debug):
     """
     Check for updates.
 
@@ -118,6 +119,9 @@ def CheckForUpdates(fileServerPort):
                     ShutDownFileServer(fileServerPort)
                     sys.exit(0)
                 ShutDownFileServer(fileServerPort)
+                if debug:
+                    logger.debug('Extracting update and restarting...')
+                    time.sleep(10)
                 appUpdate.extract_restart()
             else:
                 status = UpdateStatus.UPDATE_DOWNLOAD_FAILED
@@ -134,7 +138,7 @@ def DisplayVersionAndExit():
 
     In some versions of PyInstaller, sys.exit can result in a
     misleading 'Failed to execute script run' message which
-    can be ignored: https://github.com/pyinstaller/pyinstaller/commit/36b6ab30b11dbe2a9b505c1bb415ead10ec8a66f
+    can be ignored: http://tinyurl.com/hddpnft
     """
     sys.stdout.write("%s\n" % wxupdatedemo.__version__)
     sys.exit(0)
@@ -152,7 +156,7 @@ def Run(argv, clientConfig=None):
     fileServerPort = StartFileServer(fileServerDir)
     if fileServerPort:
         UpdatePyUpdaterClientConfig(clientConfig, fileServerPort)
-        status = CheckForUpdates(fileServerPort)
+        status = CheckForUpdates(fileServerPort, args.debug)
     else:
         status = UpdateStatus.COULDNT_CHECK_FOR_UPDATES
     if 'WXUPDATEDEMO_TESTING_FROZEN' in os.environ:
