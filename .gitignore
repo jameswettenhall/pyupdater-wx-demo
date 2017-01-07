@@ -87,3 +87,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# PyUpdater
+.pyupdater/
+pyu-data
+keypack.pyu
