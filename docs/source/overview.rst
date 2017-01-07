@@ -55,7 +55,7 @@ Initializing PyUpdater Configuration
 To build and sign frozen versions of the demo (:code:`PyUpdaterWxDemo.exe`
 versions 0.0.1 and 0.0.2), we will use :code:`pyupdater build` and
 :code:`pyupdater pkg`, but first we need to initialize the PyUpdater
-configuration for our repository and create a "keypack" (for signing
+configuration for our repository and create a :code:`keypack.pyu` (for signing
 packages) and import the keypack into our PyUpdater configuration.
 
 We will run :code:`pyupdater init` from within the :code:`pyupdater-wx-demo/`
@@ -94,12 +94,15 @@ repository folder to initialize the PyUpdater configuration:
 
 The :code:`pyupdater init` command creates :code:`client_config.py` and a
 :code:`.pyupdater/config.pyu` JSON configuration file, and a :code:`pyu-data/`
-folder, which will be used to store packages of the binary builds.
-For this demo, the URL of our `Flask <http://flask.pocoo.org/>`_ file server
-will vary depending on what port is available, so we just entered a
-placeholder URL for now (http://www.example.com).
+folder, which will be used to store packages of the binary builds.  For this
+demo, the URL of our `Flask <http://flask.pocoo.org/>`_ file server will vary
+depending on what port is available, so we just entered a placeholder URL for
+now (http://www.example.com).
 
-To create a keypack:
+If you want to remove the data in :code:`.pyupdater/`, you can run :code:`pyupdater clean`.
+
+
+To create a :code:`keypack.pyu`:
 
 .. code-block:: bash
 
