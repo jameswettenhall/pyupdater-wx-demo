@@ -29,7 +29,6 @@ wxPython demo application:
     $ python run.py
 
 .. image:: images/run.py_after_PyUpdater_init.png
-   :width: 50%
 
 In order to make update(s) available, we need to run :code:`pyupdater build`
 and :code:`pyupdater pkg` (see http://www.pyupdater.org/usage-cli/), after
@@ -42,7 +41,6 @@ we can run the demo again:
     $ python run.py
 
 .. image:: images/run.py_update_available_but_not_frozen.png 
-   :width: 50%
 
 If we are running :code:`python run.py`, rather than a frozen :code:`run.exe`
 or :code:`PyUpdaterWxDemo.exe` binary, then PyUpdater cannot restart the
@@ -238,10 +236,8 @@ Let's unzip :code:`PyUpdaterWxDemo-win-0.0.1.zip` and run the resulting
 :code:`PyUpdaterWxDemo.exe`:
 
 .. image:: images/fileserver_env_var_not_set.png
-   :width: 50%
 
 .. image:: images/couldnt_check_for_updates.png
-   :width: 50%
 
 The error message about the missing fileserver directory environment variable
 is specific to pyupdater-wx-demo.  In a real application, you would specify
@@ -255,7 +251,6 @@ and it needs to know the location of the updates, which is
 :code:`C:\Users\wettenhj\git\pyupdater-wx-demo\pyu-data\deploy`
 
 .. image:: images/set_env_var_windows.png
-   :width: 50%
 
 On Windows, you should launch a new Command Prompt window after saving the
 environment variable shown above.
@@ -365,7 +360,6 @@ PyUpdaterWxDemo.exe v0.0.1 should automatically exit and launch
 PyUpdaterWxDemo.exe v0.0.2:
 
 .. image:: images/updated_app_running_after_full_download.png
-   :width: 50%
 
 Again, because the EXE was built with :code:`--console`, we should be able
 to see some STDOUT/STDERR:
@@ -387,7 +381,6 @@ redownload the v0.0.2 update - it should already be available in the user data
 directory - :code:`C:\Users\wettenhj\AppData\Local\Company Name\PyUpdaterWxDemo\update`.
 
 .. image:: images/updated_app_running_after_full_download.png
-   :width: 50%
 
 
 Running the v0.0.2 EXE with a Patch Update Available
@@ -546,7 +539,6 @@ and the patch file downloaded from the file server:
     127.0.0.1 - - [07/Jan/2017 17:36:05] "GET /versions.gz HTTP/1.1" 200 -
 
 .. image:: images/running_after_patch_update.png
-   :width: 50%
 
 
 Version Number Semantics
