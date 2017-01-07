@@ -531,14 +531,14 @@ and the patch file downloaded from the file server:
     127.0.0.1 - - [07/Jan/2017 21:34:05] "POST /shutdown HTTP/1.1" 200 -
     DEBUG:__main__:Extracting update and restarting...
     
+.. image:: images/running_after_patch_update.png
+
 .. code-block:: bash
 
      * Running on http://127.0.0.1:49486/ (Press CTRL+C to quit)
     127.0.0.1 - - [07/Jan/2017 17:36:05] "GET /fileserver-is-ready HTTP/1.1" 200 -
     127.0.0.1 - - [07/Jan/2017 17:36:05] "GET /keys.gz HTTP/1.1" 200 -
     127.0.0.1 - - [07/Jan/2017 17:36:05] "GET /versions.gz HTTP/1.1" 200 -
-
-.. image:: images/running_after_patch_update.png
 
 
 Version Number Semantics
