@@ -392,6 +392,7 @@ directory - :code:`C:\Users\wettenhj\AppData\Local\Company Name\PyUpdaterWxDemo\
 
 Running the v0.0.2 EXE with a Patch Update Available
 ----------------------------------------------------
+
 Now that we have a signed v0.0.2 package in our user data directory -
 :code:`C:\Users\wettenhj\AppData\Local\Company Name\PyUpdaterWxDemo\update`,
 if we create a v0.0.3, we should be able to upgrade to that version via
@@ -549,7 +550,7 @@ and the patch file downloaded from the file server:
 
 
 Version Number Semantics
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 For a version like 1.3.5, '1' is the major version, '3' is the minor version
 and '5' is the patch version.  When using PyUpdater, you will sometimes see
@@ -563,7 +564,8 @@ the new binary and restart itself.
 
 
 Tests
-~~~~~
+-----
+
 Tests can be run with:
 
 .. code-block:: bash
@@ -572,7 +574,8 @@ Tests can be run with:
 
 
 Troubleshooting
-~~~~~~~~~~~~~~~
+---------------
+
 1. If PyInstaller hangs while performing the operation:
 
 .. code-block:: bash
