@@ -8,4 +8,8 @@ dsdev-utils==0.9.2
 pyupdater==2.2.0
 requests==2.4.3 # https://github.com/kennethreitz/requests/issues/2465
 setuptools==19.2 # https://github.com/pyinstaller/pyinstaller/issues/1781
-wxPython==4.0.4
+
+# Comment out this requirement for now, because in our CI environments,
+# we will install wxPython separately to ensure that it's installed from
+# a binary distribution:
+# wxPython==4.0.4
